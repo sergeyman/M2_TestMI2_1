@@ -1,0 +1,39 @@
+<div class="simpleproduct">
+
+    <h1>in list.phtml</h1>
+    <?php
+    $productCollection = $block->getProductCollection();
+
+    die('list.phtml');
+    echo('$productCollection->getSize() = ' . $productCollection->getSize());
+    if ($productCollection->getSize() > 0) :
+        ?>
+        <div class="toolbar top">
+            <?php echo $block->getPagerHtml(); ?>
+        </div>
+
+        <ul>
+            <?php foreach ($productCollection as $product) : ?>
+                <li>
+                    <div class="simpleproduct-list">
+                        <a class="product-title" href="<?php echo $this->getUrl('product/index/view',
+                            ['id' => $product->getId()]) ?>"><?php echo $product->getTitle() ?></a>
+                        <div class="simpleproduct-list-content">
+                            <?php echo $product->getSummary() ?>
+                        </div>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+
+        <div style="clear: both"></div>
+
+        <div class="toolbar-bottom">
+            <div class="toolbar bottom">
+                <?php echo $block->getPagerHtml(); ?>
+            </div>
+        </div>
+    <?php else : ?>
+        <p><?php echo __('Have no article!') ?></p>
+    <?php endif; ?>
+</div>
