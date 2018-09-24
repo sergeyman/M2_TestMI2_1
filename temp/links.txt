@@ -1,0 +1,4 @@
+M2 tutorials
+
+https://www.mage-world.com/blog/create-the-news-list-page-via-frontend-in-magento-2.html
+https://www.youtube.com/watch?v=5yPmKrbSXxo&list=PLRCavQPKiNixeX53q2v_-doqC5O7LWSJg
